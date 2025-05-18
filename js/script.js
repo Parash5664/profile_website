@@ -28,20 +28,19 @@ document.addEventListener('DOMContentLoaded', () => {
             if (nav.classList.contains('nav-active')) {
                 nav.classList.remove('nav-active');
                 burger.classList.remove('toggle');
-                navLinks.forEach(link => link.style.animation = ''); // Reset animation
+                navLinks.forEach(link => link.style.animation = '');
             }
         });
     });
 
     // Active Nav Link on Scroll
     const sections = document.querySelectorAll('section[id]');
-    const headerHeight = mainHeader ? mainHeader.offsetHeight : 70; // Estimate header height
+    const headerHeight = mainHeader ? mainHeader.offsetHeight : 70;
 
     window.addEventListener('scroll', () => {
         let current = '';
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
-            // Adjust offset: more precise would be headerHeight + a small buffer
             if (pageYOffset >= (sectionTop - headerHeight - 50)) {
                 current = section.getAttribute('id');
             }
@@ -54,19 +53,14 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // Special handling for "Home" link to be active when at top or in hero
         const homeLink = document.querySelector('.nav-links a[href="#home"]');
         if (homeLink) {
-            // Check if current section is 'home' or if user is scrolled near the top,
-            // or if no other section is 'current' (implies top of page).
             if (current === 'home' || (current === '' && pageYOffset < sections[0].offsetTop + sections[0].clientHeight / 2 - headerHeight)) {
                 if (!homeLink.classList.contains('active')) {
-                    navAnchors.forEach(a => a.classList.remove('active')); // Ensure others are not active
+                    navAnchors.forEach(a => a.classList.remove('active'));
                     homeLink.classList.add('active');
                 }
             } else if (current !== 'home' && current !== '' && homeLink.classList.contains('active')) {
-                 // If scrolled past home and home is not current, remove active from home
-                 // only if another section has become active.
                  let anotherSectionIsActive = false;
                  navAnchors.forEach(a => {
                      if (a !== homeLink && a.classList.contains('active')) {
@@ -77,8 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     homeLink.classList.remove('active');
                  }
             }
-             // Fallback: if no section is 'current' (e.g. scrolled to very top before any section), make 'home' active.
-            if (current === '' && pageYOffset < 100) { // 100px threshold for "very top"
+            if (current === '' && pageYOffset < 100) {
                 navAnchors.forEach(a => a.classList.remove('active'));
                 if(homeLink) homeLink.classList.add('active');
             }
@@ -90,4 +83,5 @@ document.addEventListener('DOMContentLoaded', () => {
     if (currentYearSpan) {
         currentYearSpan.textContent = new Date().getFullYear();
     }
+
 });

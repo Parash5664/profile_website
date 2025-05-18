@@ -20,7 +20,6 @@
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#education">Education</a></li>
                 <li><a href="#certifications">Certifications</a></li>
-                <!-- <li><a href="#projects">Projects</a></li> --> <!-- This is correctly commented out if you want it optional. If you want it active, remove the comment tags. -->
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="burger">
@@ -47,7 +46,7 @@
                 </div>
             </div>
             <div class="hero-right-panel">
-                <img src="images/profile.jpg" alt="Parash Mani Shah professional headshot">
+                <img src="images/profile.jpg" alt="Parash Mani Shah professional headshot"> <!-- Ensure profile.jpg exists -->
             </div>
         </section>
 
@@ -57,7 +56,7 @@
                 <h2>About Me</h2>
                 <div class="about-content">
                     <div class="about-image-container">
-                        <img src="images/parash.jpeg" alt="Parash Mani Shah" class="profile-image">
+                        <img src="images/parash.jpeg" alt="Parash Mani Shah" class="profile-image"> <!-- Ensure parash.jpeg exists -->
                     </div>
                     <div class="about-text">
                         <p>
@@ -79,42 +78,82 @@
         <section id="experience" class="section alt-bg">
             <div class="container">
                 <h2>Experience</h2>
-                <div class="experience-grid">
+                <div class="experience-grid four-columns">
+
+                    <!-- NAXA Experience -->
                     <div class="experience-item">
-                        <h3>Program Officer (Data for Development)</h3>
-                        <p class="company-details">NAXA | Jun 2024 - Apr 2025 </p>
-                        <ul>
-                            <li>Led AI and GIS-based data projects for urban development, ensuring 99% data integrity through rigorous risk assessments.</li>
-                            <li>Built ETL pipelines to standardize and integrate municipal datasets, improving data integration efficiency by 40%.</li>
-                            <li>Collaborated with city officials to maintain data governance and compliance, streamlining data processes.</li>
-                        </ul>
+                        <div class="experience-image-pair">
+                            <img src="images/naxa_exp1.jpeg" alt="NAXA Project Image 1">
+                            <img src="images/naxa_exp2.jpeg" alt="NAXA Project Image 2">
+                        </div>
+                        <div class="experience-text-content">
+                            <h3>Program Officer – Data for Development Initiative</h3>
+                            <p class="company-details">NAXA | Jun 2024 - Apr 2025</p>
+                            <p>I lead and manage projects that help local governments in Janakpurdham and Birgunj use data to improve their cities. I work closely with partners, funders, and teams to make sure everything runs smoothly and follows the rules.</p>
+                            <strong>Key Work:</strong>
+                            <ul>
+                                <li>Planned and managed city development projects using drones, maps (GIS), and local community input.</li>
+                                <li>Led surveys to collect household data, including training and guiding local staff.</li>
+                                <li>Checked and analyzed data to make sure it was accurate and useful.</li>
+                                <li>Wrote important project reports from start to finish.</li>
+                                <li>Handled risks, worked with different groups, and made sure we followed local laws and environmental rules.</li>
+                                <li>Helped set up and improve digital tools for city data systems.</li>
+                            </ul>
+                        </div>
                     </div>
+
+                    <!-- Technical Officer Experience -->
                     <div class="experience-item">
-                        <h3>Technical Officer (IoT Deployment - Contract)</h3>
-                        <p class="company-details">Green Decision Labs and Research | Sep 2024 - Dec 2024 (Expected)</p>
-                        <ul>
-                            <li>Deployed IoT sensors for real-time environmental data monitoring, enhancing data capture efficiency by 20%.</li>
-                            <li>Configured servers and calibrated sensors, ensuring optimal system performance.</li>
-                            <li>Trained local personnel on sensor maintenance, improving operational efficiency by 80%.</li>
-                        </ul>
+                        <div class="experience-image-pair">
+                            <!-- === REPLACE THESE IMAGE NAMES (Pic3 & Pic4) === -->
+                            <img src="images/gd_exp1.jpeg" alt="Technical Officer Project Image 1">
+                            <img src="images/gd_exp2.jpeg" alt="Technical Officer Project Image 2">
+                        </div>
+                        <div class="experience-text-content">
+                            <h3>Technical Officer (IoT Deployment - Contract)</h3>
+                            <p class="company-details">Green Decision Labs and Research | Sep 2024 - Dec 2024 (Expected)</p>
+                            <ul>
+                                <li>Deployed IoT sensors for real-time environmental data monitoring, enhancing data capture efficiency by 20%.</li>
+                                <li>Configured servers and calibrated sensors, ensuring optimal system performance.</li>
+                                <li>Trained local personnel on sensor maintenance, improving operational efficiency by 80%.</li>
+                            </ul>
+                        </div>
                     </div>
+
+                    <!-- Business Development Officer Experience -->
                     <div class="experience-item">
-                        <h3>Business Development Officer</h3>
-                        <p class="company-details">V and S Trades and Suppliers | Nov 2020 - Jun 2024</p>
-                        <ul>
-                            <li>Implemented data-driven strategies, boosting customer acquisition and sales by 15%.</li>
-                            <li>Managed operational workflows, enhancing team efficiency by 25%.</li>
-                            <li>Managed BOQ and Technical Drawings, ensuring project accuracy and compliance.</li>
-                        </ul>
+                        <div class="experience-image-pair">
+                            <!-- === REPLACE THESE IMAGE NAMES (Pic5 & Pic6) === -->
+                            <img src="images/vs_exp1.jpeg" alt="Business Dev Project Image 1">
+                            <img src="images/vs_exp2.jpg" alt="Business Dev Project Image 2">
+                        </div>
+                        <div class="experience-text-content">
+                            <h3>Business Development Officer</h3>
+                            <p class="company-details">V and S Trades and Suppliers | Nov 2020 - Jun 2024</p>
+                            <ul>
+                                <li>Implemented data-driven strategies, boosting customer acquisition and sales by 15%.</li>
+                                <li>Managed operational workflows, enhancing team efficiency by 25%.</li>
+                                <li>Managed BOQ and Technical Drawings, ensuring project accuracy and compliance.</li>
+                            </ul>
+                        </div>
                     </div>
+
+                    <!-- DT Engineer Experience -->
                     <div class="experience-item">
-                        <h3>DT Engineer (Network Optimization)</h3>
-                        <p class="company-details">B.R.N. Tech & Infra Solutions Pvt. Ltd. | Aug 2019 - Sep 2020</p>
-                        <ul>
-                            <li>Conducted RF drive tests, improving radio frequency coverage by 20%, ensuring optimal network performance.</li>
-                            <li>Analyzed field data to optimize network parameters, enhancing overall system efficiency by [a significant]%. (<!-- Replace [a significant]% with actual value -->)</li>
-                            <li>Increased key performance indicators (KPIs) by implementing data-driven optimization strategies, achieving improvement.</li>
-                        </ul>
+                        <div class="experience-image-pair">
+                            <!-- === REPLACE THESE IMAGE NAMES (Pic7 & Pic8) === -->
+                            <img src="images/dt_exp1.jpg" alt="DT Engineer Project Image 1">
+                            <img src="images/dt_exp2.jpg" alt="DT Engineer Project Image 2">
+                        </div>
+                        <div class="experience-text-content">
+                            <h3>DT Engineer (Network Optimization)</h3>
+                            <p class="company-details">B.R.N. Tech & Infra Solutions Pvt. Ltd. | Aug 2019 - Sep 2020</p>
+                            <ul>
+                                <li>Conducted RF drive tests, improving radio frequency coverage by 20%, ensuring optimal network performance.</li>
+                                <li>Analyzed field data to optimize network parameters, enhancing overall system efficiency by [a significant]%.</li>
+                                <li>Increased key performance indicators (KPIs) by implementing data-driven optimization strategies, achieving improvement.</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -178,26 +217,7 @@
             </div>
         </section>
 
-        <!-- Projects Section (Optional - Fill this if you have distinct personal projects) -->
-        <!--
-        <section id="projects" class="section alt-bg">
-            <div class="container">
-                <h2>My Projects</h2>
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <img src="images/project1-placeholder.jpg" alt="Project 1 Thumbnail">
-                        <div class="project-info">
-                            <h3>Awesome Project One</h3>
-                            <p>A brief description of this amazing project, highlighting key features and technologies.</p>
-                            <a href="#" target="_blank" class="project-link">View Details</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        -->
-
-<!-- Contact Section -->
+        <!-- Contact Section -->
         <section id="contact" class="section">
             <div class="container">
                 <h2>Let's Get In Touch</h2>
@@ -210,9 +230,6 @@
                 <div class="social-media-links">
                     <a href="https://www.linkedin.com/in/parash-mani-shah-219139307/" target="_blank" title="LinkedIn"><img src="images/icon-linkedin.svg" alt="LinkedIn"></a>
                     <a href="https://github.com/Parash5664" target="_blank" title="GitHub"><img src="images/icon-github.svg" alt="GitHub"></a>
-                    <!-- Add more social links here if needed, e.g., Twitter, Kaggle -->
-                    <!-- Example for Kaggle: -->
-                    <!-- <a href="YOUR_KAGGLE_PROFILE_URL" target="_blank" title="Kaggle"><img src="images/icon-kaggle.svg" alt="Kaggle"></a> -->
                 </div>
             </div>
         </section>
