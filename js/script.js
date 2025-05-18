@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (burger && nav) {
         burger.addEventListener('click', () => {
             nav.classList.toggle('nav-active');
-
             navLinks.forEach((link, index) => {
                 if (link.style.animation) {
                     link.style.animation = '';
@@ -36,7 +35,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Active Nav Link on Scroll
     const sections = document.querySelectorAll('section[id]');
     const headerHeight = mainHeader ? mainHeader.offsetHeight : 70;
-
     window.addEventListener('scroll', () => {
         let current = '';
         sections.forEach(section => {
@@ -45,14 +43,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 current = section.getAttribute('id');
             }
         });
-
         navAnchors.forEach(a => {
             a.classList.remove('active');
             if (a.getAttribute('href').substring(1) === current) {
                 a.classList.add('active');
             }
         });
-
         const homeLink = document.querySelector('.nav-links a[href="#home"]');
         if (homeLink) {
             if (current === 'home' || (current === '' && pageYOffset < sections[0].offsetTop + sections[0].clientHeight / 2 - headerHeight)) {
@@ -67,9 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
                          anotherSectionIsActive = true;
                      }
                  });
-                 if (anotherSectionIsActive) {
-                    homeLink.classList.remove('active');
-                 }
+                 if (anotherSectionIsActive) { homeLink.classList.remove('active'); }
             }
             if (current === '' && pageYOffset < 100) {
                 navAnchors.forEach(a => a.classList.remove('active'));
@@ -83,5 +77,4 @@ document.addEventListener('DOMContentLoaded', () => {
     if (currentYearSpan) {
         currentYearSpan.textContent = new Date().getFullYear();
     }
-
 });
