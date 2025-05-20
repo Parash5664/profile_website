@@ -48,78 +48,18 @@ nav { display: flex; justify-content: space-between; align-items: center; }
 #about .about-text { flex-basis: 65%; text-align: left; }
 #about .about-text p { font-size: 1.05rem; color: #555; }
 
-/* Experience Section - 2x2 on Desktop, 1 col on Mobile */
-#experience .experience-grid.four-columns {
-    display: grid;
-    grid-template-columns: 1fr; /* Default: 1 column for mobile-first */
-    gap: 25px;
-    margin-top: 40px;
-}
-@media (min-width: 768px) { /* 2 columns for tablets and wider desktops */
-    #experience .experience-grid.four-columns {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-.experience-item {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-}
-.experience-image-pair {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 15px;
-    width: 100%;
-    height: 150px; /* ADJUST THIS for desired image height */
-}
-.experience-image-pair img {
-    flex: 1;
-    width: 50%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    border-radius: 6px;
-    background-color: #f0f0f0;
-}
-.experience-text-content h3 {
-    color: #007BFF;
-    margin-bottom: 5px;
-    font-size: 1.2rem;
-    line-height: 1.3;
-}
-.experience-text-content .company-details {
-    font-size: 0.85rem;
-    color: #555;
-    margin-bottom: 10px;
-    font-style: italic;
-}
-.experience-text-content p:not(.company-details) {
-    font-size: 0.9rem;
-    line-height: 1.6;
-    margin-bottom: 8px;
-}
-.experience-text-content strong {
-    display: block;
-    margin-top: 10px;
-    margin-bottom: 5px;
-    font-weight: 600;
-    color: #333;
-    font-size: 0.9rem;
-}
-.experience-text-content ul {
-    list-style-position: outside;
-    padding-left: 18px;
-    margin-bottom: 0;
-    font-size: 0.85rem;
-}
-.experience-text-content ul li {
-    margin-bottom: 5px;
-    line-height: 1.5;
-}
+/* Experience Section */
+#experience .experience-grid.four-columns { display: grid; grid-template-columns: 1fr; gap: 25px; margin-top: 40px; }
+@media (min-width: 768px) { #experience .experience-grid.four-columns { grid-template-columns: repeat(2, 1fr); } }
+.experience-item { background-color: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); display: flex; flex-direction: column; text-align: left; }
+.experience-image-pair { display: flex; gap: 10px; margin-bottom: 15px; width: 100%; height: 150px; }
+.experience-image-pair img { flex: 1; width: 50%; height: 100%; object-fit: cover; object-position: center; border-radius: 6px; background-color: #f0f0f0; }
+.experience-text-content h3 { color: #007BFF; margin-bottom: 5px; font-size: 1.2rem; line-height: 1.3; }
+.experience-text-content .company-details { font-size: 0.85rem; color: #555; margin-bottom: 10px; font-style: italic; }
+.experience-text-content p:not(.company-details) { font-size: 0.9rem; line-height: 1.6; margin-bottom: 8px; }
+.experience-text-content strong { display: block; margin-top: 10px; margin-bottom: 5px; font-weight: 600; color: #333; font-size: 0.9rem; }
+.experience-text-content ul { list-style-position: outside; padding-left: 18px; margin-bottom: 0; font-size: 0.85rem; }
+.experience-text-content ul li { margin-bottom: 5px; line-height: 1.5; }
 
 /* Skills Section */
 #skills .skills-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 30px; }
@@ -132,20 +72,48 @@ nav { display: flex; justify-content: space-between; align-items: center; }
 .education-item h3 { color: #333; margin-bottom: 5px; }
 .education-item .institution-details { font-size: 1rem; color: #555; font-style: italic; margin-bottom: 0; }
 
-/* Licenses & Certifications Section */
-.certifications-grid { display: grid; grid-template-columns: 1fr; gap: 30px; margin-top: 20px; }
-@media (min-width: 768px) { .certifications-grid { grid-template-columns: repeat(2, 1fr); } }
-.certification-card { background-color: #fff; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.07); padding: 20px; display: flex; align-items: flex-start; gap: 20px; }
-.certification-logo { width: 60px; height: 60px; object-fit: contain; flex-shrink: 0; }
-.certification-logo.certificate-thumbnail { object-fit: cover; border: 1px solid #ddd; }
-.certification-details { flex-grow: 1; }
-.certification-details h3 { font-size: 1.2rem; color: #333; margin-bottom: 4px; line-height: 1.4; }
-.certification-issuer { font-size: 0.95rem; color: #555; margin-bottom: 4px; }
-.certification-date { font-size: 0.85rem; color: #777; margin-bottom: 10px; }
-.certification-skills { font-size: 0.85rem; color: #444; margin-bottom: 15px; line-height: 1.5; }
-.credential-button { display: inline-block; padding: 8px 18px; background-color: transparent; color: #007BFF; border: 1px solid #007BFF; border-radius: 20px; font-size: 0.9rem; font-weight: 600; transition: background-color 0.3s ease, color 0.3s ease; }
-.credential-button:hover { background-color: #007BFF; color: #fff; }
-@media (max-width: 500px) { .certification-card { flex-direction: column; align-items: center; text-align: center; } .certification-logo { margin-bottom: 15px; } .certification-details { width: 100%; } }
+/* Licenses & Certifications Section - IMAGE ONLY DISPLAY */
+.certifications-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Default: 1 column for mobile-first */
+    gap: 25px;
+    margin-top: 30px;
+}
+/* This media query should make it 2 columns on screens 600px and wider */
+@media (min-width: 600px) {
+    .certifications-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+/* Optional: For 3 columns on very wide screens, if you have many certificates */
+/*
+@media (min-width: 992px) {
+    .certifications-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+*/
+.certification-image-item {
+    display: block;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #f9f9f9; /* Light bg in case images have transparency or load slow */
+}
+.certification-image-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.certification-image-item img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 11; /* Adjust to your certificate's typical aspect ratio */
+    object-fit: contain; /* Ensures the whole certificate is visible */
+    border-radius: 7px; /* Optional: if you want inner image rounded too */
+}
+
 
 /* Contact Section */
 #contact { text-align: center; }
@@ -171,35 +139,93 @@ footer a { color: #00A0FF; }
 
 @media (max-width: 768px) { /* Mobile */
     .container { width: 95%; }
-    h1 { font-size: 2.5rem; } /* General h1 */
-    h2 { font-size: 1.8rem; margin-bottom: 30px;}
+    /* ... other general mobile styles ... */
 
-    /* Mobile Nav */
-    .nav-links { position: fixed; right: 0; top: 0; height: 100vh; background-color: #1C1C1E; flex-direction: column; align-items: center; justify-content: center; width: 70%; max-width: 300px; transform: translateX(100%); transition: transform 0.5s ease-in-out; box-shadow: -5px 0 15px rgba(0,0,0,0.2); padding-top: 60px; }
-    .nav-links.nav-active { transform: translateX(0%); }
-    .nav-links li { margin: 20px 0; opacity: 0; }
-    .nav-links a { font-size: 1.1rem; color: #FFFFFF; }
-    .nav-links a:hover, .nav-links a.active { color: #00A0FF; }
-    .nav-links a::after { background-color: #00A0FF; }
+    .nav-links { /* ... keep your existing mobile nav styles ... */ }
+    .burger { /* ... keep your existing mobile burger styles ... */ }
+    .toggle .line1 { /* ... */ } .toggle .line2 { /* ... */ } .toggle .line3 { /* ... */ }
 
-    .burger { display: block; z-index: 1001; position: relative; }
-    .toggle .line1 { transform: rotate(-45deg) translate(-5px, 6px); }
-    .toggle .line2 { opacity: 0; }
-    .toggle .line3 { transform: rotate(45deg) translate(-5px, -6px); }
 
-    /* Mobile Hero - Option 1: Text First */
-    .hero-section-split { flex-direction: column; min-height: 100vh; height: auto; padding-top: 60px; }
-    .hero-left-panel, .hero-right-panel { flex-basis: auto; width: 100%; }
-    .hero-left-panel { background-color: #1C1C1E; color: #FFFFFF; padding: 60px 20px 40px 20px; text-align: center; align-items: center; order: 1; }
-    .hero-right-panel { height: 45vh; order: 2; background-color: #f0f0f0; }
-    .hero-right-panel img { width: 100%; height: 100%; object-fit: cover; object-position: center center; }
-    .hero-text-content h1 { font-size: 2.8rem; margin-bottom: 15px; } /* Mobile Hero H1 */
-    .hero-text-content p { font-size: 1rem; line-height: 1.6; margin-bottom: 25px; } /* Mobile Hero P */
-    .hero-cta { padding: 12px 25px; font-size: 0.9rem; } /* Mobile Hero CTA */
+    /* === CORRECTED MOBILE HERO STYLES TO MATCH FRIEND'S SCREENSHOT === */
+    #home.hero-section-split { /* Be specific to ensure padding-top for header is applied correctly */
+        padding-top: 60px;  /* Header offset for the entire hero section container.
+                                ADJUST 60px to your actual mobile header height. */
+        flex-direction: column; /* Stack panels */
+        min-height: 100vh;  /* Try to make the whole hero fill the screen vertically */
+        height: auto;       /* Allow it to grow if content is very tall */
+    }
 
+    .hero-left-panel,
+    .hero-right-panel {
+        flex-basis: auto; /* Reset flex-basis for stacking */
+        width: 100%;    /* Both panels take full width */
+        padding-top: 0; /* Crucial: Reset any padding-top from desktop view if parent handles header offset */
+    }
+
+    .hero-right-panel { /* Image Panel - Comes FIRST visually */
+        order: 1;
+        height: 50vh;   /* ADJUST THIS: e.g., 45vh, 50vh, 55vh.
+                           Determines how much of the screen the image takes.
+                           Friend's screenshot looks like around 40-50vh. */
+        background-color: #f0f0f0; /* Fallback */
+        /* No top/bottom padding if image fills the height */
+    }
+    .hero-right-panel img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center top; /* Good for portraits */
+    }
+
+    .hero-left-panel { /* Text Panel - Comes SECOND visually */
+        order: 2;
+        background-color: #1C1C1E;
+        color: #FFFFFF;
+        padding: 25px 20px; /* Reduced top/bottom padding */
+        text-align: left;   /* Match friend's screenshot */
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center; /* Optional: if you want to center text vertically
+                                      if this panel has extra space.
+                                      If content is long, this won't have much effect. */
+        flex-grow: 1; /* Allow this panel to take up remaining vertical space */
+    }
+
+    .hero-text-content {
+        width: 100%;
+    }
+    .hero-text-content h1 { /* "Hi, I'm Parash Mani Shah" */
+        font-size: 2rem;  /* REDUCED font size for better fit */
+        margin-bottom: 10px;
+        text-align: left;
+        color: #FFFFFF;
+    }
+    .hero-text-content p { /* Your description */
+        font-size: 0.9rem; /* REDUCED font size */
+        line-height: 1.5;
+        margin-bottom: 20px; /* Space before CTA */
+        text-align: left;
+        color: #E0E0E0;
+    }
+    .hero-cta { /* CTA Button */
+        display: inline-block;
+        margin-top: 0; /* Let paragraph margin handle space or set specific margin */
+        background-color: transparent;
+        color: #FFFFFF;
+        border: 2px solid #FFFFFF;
+        padding: 10px 25px;
+        border-radius: 30px;
+        font-size: 0.9rem;
+        font-weight: 600;
+    }
+    .hero-cta:hover {
+        background-color: #FFFFFF;
+        color: #1C1C1E;
+    }
+
+    /* ... rest of your mobile styles for other sections ... */
     #about .about-content { flex-direction: column; text-align: center; }
-    #about .about-image-container { margin-bottom: 30px; }
-    #about .about-text { text-align: center; }
+    /* ... etc ... */
 }
 
 @keyframes navLinkFade {
