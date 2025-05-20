@@ -32,7 +32,7 @@ nav { display: flex; justify-content: space-between; align-items: center; }
 .hero-section-split { display: flex; min-height: 100vh; width: 100%; overflow: hidden; box-sizing: border-box; background-color: #1C1C1E; }
 .hero-left-panel { flex-basis: 50%; background-color: #1C1C1E; color: #FFFFFF; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; padding: 40px 60px; box-sizing: border-box; padding-top: 70px; /* Offset for fixed header on desktop */ }
 .hero-right-panel { flex-basis: 50%; background-color: #f0f0f0; display: flex; align-items: center; justify-content: center; overflow: hidden; padding-top: 70px; /* Offset for fixed header on desktop */ }
-.hero-right-panel img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+.hero-right-panel img { width: 100%; height: 100%; object-fit: cover; object-position: center top; } /* Desktop image position */
 .hero-text-content h1 { font-size: 3.5rem; margin-bottom: 20px; line-height: 1.2; color: #FFFFFF; }
 .hero-text-content p { font-size: 1.1rem; line-height: 1.7; margin-bottom: 30px; max-width: 600px; color: #E0E0E0; }
 .cta-button { display: inline-block; background-color: #007BFF; color: #fff; padding: 15px 35px; border-radius: 50px; font-weight: 700; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; transition: background-color 0.3s ease, transform 0.3s ease; box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3); border: none; }
@@ -107,7 +107,7 @@ footer a { color: #00A0FF; }
 
 @media (max-width: 992px) { /* Tablet - General adjustments if needed */
     .hero-left-panel, .hero-right-panel {
-        padding-top: 70px; /* Ensure desktop hero panels still account for header */
+        padding-top: 70px;
     }
     .hero-left-panel { padding-left: 30px; padding-right: 30px; }
     .hero-text-content h1 { font-size: 2.8rem; }
@@ -116,24 +116,24 @@ footer a { color: #00A0FF; }
 }
 
 @media (max-width: 768px) { /* Mobile */
-    :root { /* Define mobile header height as a variable */
+    :root {
         --mobile-header-height: 55px; /* <<<< ADJUST THIS to your actual mobile header height */
     }
 
     .container { width: 95%; }
-    h1 { font-size: 2.5rem; } /* General mobile h1 */
+    h1 { font-size: 2.5rem; }
     h2 { font-size: 1.8rem; margin-bottom: 30px;}
 
     /* New Mobile Header Style */
     #main-header {
-        padding: 0 10px; /* Adjust horizontal padding if needed */
+        padding: 0 10px;
         height: var(--mobile-header-height);
         display: flex;
         align-items: center;
     }
-    #main-header .container { /* Make container full width and handle padding here or on nav */
+    #main-header .container {
         width: 100%;
-        padding: 0; /* Reset container padding if header handles it */
+        padding: 0;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -141,7 +141,7 @@ footer a { color: #00A0FF; }
     .logo.logo-stacked {
         font-size: 1rem;
         line-height: 1.1;
-        margin-right: auto; /* Push nav links to the right */
+        margin-right: auto;
         flex-shrink: 0;
         color: #FFFFFF;
     }
@@ -161,22 +161,21 @@ footer a { color: #00A0FF; }
         transform: none;
         box-shadow: none;
         padding-top: 0;
-        /* justify-content: flex-end; /* Not needed if logo has margin-right: auto */
-        flex-grow: 0; /* Don't let it grow, let it size based on content */
+        flex-grow: 0;
     }
     .nav-links li {
-        margin: 0 2px; /* Tighter spacing for links */
+        margin: 0 2px;
         opacity: 1;
         animation: none;
     }
     .nav-links li:first-child { margin-left: 0; }
     .nav-links li:last-child { margin-right: 0; }
     .nav-links a {
-        font-size: 0.65rem; /* Further reduced for very tight spaces */
+        font-size: 0.65rem;
         font-weight: 500;
-        padding: 5px 2px; /* Tighter padding */
+        padding: 5px 2px;
         color: #E0E0E0;
-        white-space: nowrap; /* Prevent link text from wrapping */
+        white-space: nowrap;
     }
     .nav-links a:hover, .nav-links a.active { color: #FFFFFF; }
     .nav-links a::after { height: 1px; background-color: #FFFFFF; }
@@ -186,64 +185,70 @@ footer a { color: #00A0FF; }
     }
 
 
-    /* Mobile Hero - Image First, then Text */
+    /* Mobile Hero - Image First, then Text (Corrected) */
     #home.hero-section-split {
         padding-top: var(--mobile-header-height);
+        display: flex;
         flex-direction: column;
-        min-height: 100vh;
-        height: auto;
-        box-sizing: border-box; /* Ensure padding is included in height calculations */
+        min-height: calc(100vh - var(--mobile-header-height));
+        box-sizing: border-box;
     }
     .hero-left-panel, .hero-right-panel {
         flex-basis: auto;
         width: 100%;
         padding-top: 0;
     }
+
     .hero-right-panel { /* Image Panel */
         order: 1;
-        height: 50vh; /* ADJUST THIS for image proportion */
-        background-color: #f0f0f0;
+        height: 50vh;   /* <<<< ADJUST THIS (e.g., 40vh to 55vh) */
+        background-color: #e0e0e0;
+        flex-shrink: 0;
     }
     .hero-right-panel img {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        object-position: center top;
+        object-position: center top; /* <<<< Focus on top of image */
     }
+
     .hero-left-panel { /* Text Panel */
         order: 2;
         background-color: #1C1C1E;
         color: #FFFFFF;
-        padding: 25px 20px;
+        padding: 20px 20px 25px 20px;
         text-align: left;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        flex-grow: 1; /* Takes remaining vertical space */
+        /* justify-content: center; /* Remove if text should start at top */
+        flex-grow: 1;
     }
-    .hero-text-content h1 { /* Mobile Hero H1 */
-        font-size: 2rem;
-        line-height: 1.2;
-        margin-bottom: 10px;
+    .hero-text-content {
+        width: 100%;
+    }
+    .hero-text-content h1 {
+        font-size: 1.8rem;
+        line-height: 1.25;
+        margin-bottom: 8px;
         text-align: left;
         color: #FFFFFF;
     }
-    .hero-text-content p { /* Mobile Hero Paragraph */
-        font-size: 0.9rem;
+    .hero-text-content p {
+        font-size: 0.85rem;
         line-height: 1.5;
-        margin-bottom: 20px;
+        margin-bottom: 15px;
         text-align: left;
         color: #E0E0E0;
     }
-    .hero-cta { /* Mobile Hero CTA Button */
+    .hero-cta {
         display: inline-block;
-        margin-top: 0;
+        margin-top: auto;
         background-color: transparent;
         color: #FFFFFF;
         border: 2px solid #FFFFFF;
-        padding: 10px 25px;
+        padding: 8px 20px;
         border-radius: 30px;
-        font-size: 0.9rem;
+        font-size: 0.85rem;
         font-weight: 600;
         align-self: flex-start;
     }
@@ -251,6 +256,7 @@ footer a { color: #00A0FF; }
         background-color: #FFFFFF;
         color: #1C1C1E;
     }
+
 
     /* About Section Mobile */
     #about .about-content { flex-direction: column; text-align: center; }
