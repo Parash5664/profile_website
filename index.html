@@ -1,9 +1,56 @@
+is your definitive "previous complete code" for `index.html`.
+
+I will take this exact `index.html` structure and integrate:
+1.  The **SEO meta tags** (`<title>`, `<meta name="description">`, `<meta name="keywords">`) using your latest keyword suggestions.
+2.  The **(optional) JSON-LD Schema Markup**.
+3.  The **modified logo structure** for the mobile header (stacked "PARASH MANI SHAH").
+4.  Ensure all image `src` paths use `.jpeg` for consistency where you indicated, and that `alt` attributes are present. I will use the image names you provided in that HTML (`pruff.jpg`, `parash.jpeg`, `naxa_exp1.jpeg`, `naxa_exp2.jpeg`, `gd_exp1.jpeg`, `gd_exp2.jpeg`, `vs_exp1.jpeg`, `vs_exp2.jpg` (note: one is .jpg), `dt_exp1.jpg`, `dt_exp2.jpg`, `mlintro.png` (note: .png), `pandas.jpeg`, `slack.jpeg`, `codeit.jpeg`, `projectquality.jpeg`, `naxacrop.jpeg`). **You still need to ensure these files exist with these exact names and extensions in your `images` folder.**
+
+---
+
+**1. `index.html` (Complete - Based on Your Provided Previous Code + SEO + Mobile Header Logo)**
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parash Mani Shah - Data Engineer & Analyst</title>
+
+    <!-- === UPDATED SEO META TAGS === -->
+    <title>Parash Shah | Data Scientist & AI Developer in Nepal</title>
+    <meta name="description" content="Official website of Parash Shah – Data Scientist, Stock Market Analyst, and AI/ML Enthusiast from Nepal. Explore projects, skills, and contact info.">
+    <meta name="keywords" content="Parash Shah, Parash Mani Shah, Data Scientist, Data Analyst, Data Engineer, AI Developer, AI Engineer, NEPSE Stock Analyst, Python Developer Nepal, Machine Learning Enthusiast Nepal, TensorFlow Developer Nepal, Data Integration, ETL, Data Visualization, IoT, Robotics, Portfolio, Resume, Freelance Data Analyst, Janakpur, Nepal, AI projects Nepal, stock market analysis">
+    <!-- === SEO META TAGS END === -->
+
+    <!-- === (OPTIONAL) JSON-LD SCHEMA MARKUP === -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Parash Shah",
+      "alternateName": "Parash Mani Shah",
+      "jobTitle": "Data Scientist, AI Developer, Data Engineer, Data Analyst, NEPSE Stock Analyst",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Parash Shah (Freelance)"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Janakpur",
+        "addressCountry": "NP"
+      },
+      "url": "https://www.parashshah.com.np",
+      "sameAs": [
+        "https://www.linkedin.com/in/parash-mani-shah-219139307/",
+        "https://github.com/Parash5664"
+      ],
+      "description": "Official website of Parash Shah – Data Scientist, Stock Market Analyst, and AI/ML Enthusiast from Nepal. Explore projects, skills, and contact info.",
+      "knowsAbout": ["Data Science", "Artificial Intelligence", "Machine Learning", "Python Programming", "ETL Development", "Data Visualization", "NEPSE Stock Analysis", "Robotics", "TensorFlow", "Data Integration", "IoT"]
+    }
+    </script>
+    <!-- === SCHEMA MARKUP END === -->
+
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -12,7 +59,12 @@
     <!-- Header & Navigation -->
     <header id="main-header">
         <nav class="container">
-            <a href="#home" class="logo">PARASH MANI SHAH</a>
+            <!-- MODIFIED LOGO for stacking on mobile -->
+            <a href="#home" class="logo logo-stacked">
+                <span>PARASH</span>
+                <span>MANI</span>
+                <span>SHAH</span>
+            </a>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
@@ -22,7 +74,7 @@
                 <li><a href="#certifications">Certifications</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <div class="burger">
+            <div class="burger"> <!-- Will be hidden on mobile by CSS for the new mobile header style -->
                 <div class="line1"></div>
                 <div class="line2"></div>
                 <div class="line3"></div>
@@ -37,16 +89,16 @@
                 <div class="hero-text-content">
                     <h1>Hi, I'm Parash Mani Shah</h1>
                     <p>
-                        Dedicated and results-oriented Data Engineer / Data Analyst skilled in data integration,
+                        A dedicated and results-oriented Data Scientist, Data Engineer, and AI Developer skilled in data integration,
                         ETL development, Python programming, and data visualization. I excel at converting
-                        complex datasets into insights through AI and ML techniques. Excited to engage in
-                        innovative and utilize my technical expertise enhance strategic decision-making.
+                        complex datasets into insights through AI, Machine Learning, and also delve into NEPSE stock analysis. Excited to engage in
+                        innovative projects and utilize my technical expertise to enhance strategic decision-making.
                     </p>
                     <a href="#contact" class="cta-button hero-cta">Get in Touch</a>
                 </div>
             </div>
             <div class="hero-right-panel">
-                <img src="images/pruff.jpg" alt="Parash Mani Shah professional headshot"> <!-- UPDATE FILENAME IF NEEDED -->
+                <img src="images/pruff.jpg" alt="Parash Shah - Data Scientist in Nepal, profile picture">
             </div>
         </section>
 
@@ -56,18 +108,16 @@
                 <h2>About Me</h2>
                 <div class="about-content">
                     <div class="about-image-container">
-                        <img src="images/parash.jpeg" alt="Parash Mani Shah" class="profile-image"> <!-- UPDATE FILENAME IF NEEDED -->
+                        <img src="images/parash.jpeg" alt="Parash Mani Shah - Data Analyst and Engineer">
                     </div>
                     <div class="about-text">
                         <p>
-                            Results-driven Data Engineer / Data Analyst with a Bachelor of Engineering in Electronics and Communication.
-                            I have expertise in data integration, ETL development, Python programming, and data visualization.
-                            Adept at transforming complex datasets into actionable insights using AI and ML techniques.
+                            As a Data Scientist and AI Developer based in Janakpur, Nepal, I am passionate about leveraging data to solve real-world problems.
+                            My expertise spans from data engineering tasks like ETL and integration to advanced machine learning models and data visualization.
                         </p>
                         <p>
-                            I am passionate about applying data-driven solutions to drive strategic decision-making and eager to contribute
-                            as an AI Engineer by leveraging technical skills and innovative solutions.
-                            Currently based in Janakpur, Nepal.
+                            I also have a keen interest in NEPSE stock market analysis and exploring the potential of AI in robotics.
+                            I'm always eager to learn and apply new technologies to create impactful solutions.
                         </p>
                     </div>
                 </div>
@@ -83,8 +133,8 @@
                     <!-- NAXA Experience -->
                     <div class="experience-item">
                         <div class="experience-image-pair">
-                            <img src="images/naxa_exp1.jpeg" alt="NAXA Project Image 1">
-                            <img src="images/naxa_exp2.jpeg" alt="NAXA Project Image 2">
+                            <img src="images/naxa_exp1.jpeg" alt="NAXA Data for Development Project - Urban Planning GIS">
+                            <img src="images/naxa_exp2.jpeg" alt="NAXA Project - Community Data Collection">
                         </div>
                         <div class="experience-text-content">
                             <h3>Program Officer – Data for Development Initiative</h3>
@@ -105,9 +155,8 @@
                     <!-- Technical Officer Experience -->
                     <div class="experience-item">
                         <div class="experience-image-pair">
-                            <!-- === REPLACE THESE IMAGE NAMES (Pic3 & Pic4) === -->
-                            <img src="images/gd_exp1.jpeg" alt="Technical Officer Project Image 1">
-                            <img src="images/gd_exp2.jpeg" alt="Technical Officer Project Image 2">
+                            <img src="images/gd_exp1.jpeg" alt="IoT Deployment Project - Sensor Setup">
+                            <img src="images/gd_exp2.jpeg" alt="Environmental Data Monitoring Dashboard">
                         </div>
                         <div class="experience-text-content">
                             <h3>Technical Officer (IoT Deployment - Contract)</h3>
@@ -123,9 +172,8 @@
                     <!-- Business Development Officer Experience -->
                     <div class="experience-item">
                         <div class="experience-image-pair">
-                            <!-- === REPLACE THESE IMAGE NAMES (Pic5 & Pic6) === -->
-                            <img src="images/vs_exp1.jpeg" alt="Business Dev Project Image 1">
-                            <img src="images/vs_exp2.jpg" alt="Business Dev Project Image 2">
+                            <img src="images/vs_exp1.jpeg" alt="Business Development Strategy Presentation">
+                            <img src="images/vs_exp2.jpg" alt="Team Efficiency Workflow Chart"> <!-- Note .jpg here -->
                         </div>
                         <div class="experience-text-content">
                             <h3>Business Development Officer</h3>
@@ -141,9 +189,8 @@
                     <!-- DT Engineer Experience -->
                     <div class="experience-item">
                         <div class="experience-image-pair">
-                            <!-- === REPLACE THESE IMAGE NAMES (Pic7 & Pic8) === -->
-                            <img src="images/dt_exp1.jpg" alt="DT Engineer Project Image 1">
-                            <img src="images/dt_exp2.jpg" alt="DT Engineer Project Image 2">
+                            <img src="images/dt_exp1.jpg" alt="RF Drive Test Analysis"> <!-- Note .jpg here -->
+                            <img src="images/dt_exp2.jpg" alt="Network Optimization KPI Dashboard"> <!-- Note .jpg here -->
                         </div>
                         <div class="experience-text-content">
                             <h3>DT Engineer (Network Optimization)</h3>
@@ -167,6 +214,8 @@
                     <span>Python</span> <span>SQL</span> <span>C</span> <span>MongoDB</span>
                     <span>MySQL</span> <span>PostgreSQL</span> <span>ETL Pipelines</span>
                     <span>Data Wrangling</span> <span>Aggregation Pipelines</span> <span>Big Data & Cloud</span>
+                    <span>Machine Learning</span> <span>AI Development</span> <span>TensorFlow</span> <span>Robotics</span>
+                    <span>NEPSE Stock Analysis</span>
                 </div>
             </div>
         </section>
@@ -186,38 +235,38 @@
             </div>
         </section>
 
- <!-- Licenses & Certifications Section -->
- <section id="certifications" class="section">
-    <div class="container">
-        <h2>Licenses & Certifications</h2>
-        <div class="certifications-grid">
+        <!-- Licenses & Certifications Section -->
+        <section id="certifications" class="section">
+            <div class="container">
+                <h2>Licenses & Certifications</h2>
+                <div class="certifications-grid">
 
-            <a href="https://www.kaggle.com/learn/certification/parash11/intro-to-machine-learning" target="_blank" class="certification-image-item">
-                <img src="images/mlintro.png" alt="Kaggle Intro to Machine Learning Certificate">
-            </a>
+                    <a href="https://www.kaggle.com/learn/certification/parash11/intro-to-machine-learning" target="_blank" class="certification-image-item">
+                        <img src="images/mlintro.png" alt="Kaggle Intro to Machine Learning Certificate - Parash Shah"> <!-- Note .png here -->
+                    </a>
 
-            <a href="https://www.kaggle.com/learn/certification/parash11/pandas" target="_blank" class="certification-image-item">
-                <img src="images/pandas.jpeg" alt="Kaggle Pandas Certificate">
-            </a>
+                    <a href="https://www.kaggle.com/learn/certification/parash11/pandas" target="_blank" class="certification-image-item">
+                        <img src="images/pandas.jpeg" alt="Kaggle Pandas Certificate - Parash Shah">
+                    </a>
 
-            <a href="YOUR_SLACK_PM_CREDENTIAL_URL_HERE" target="_blank" class="certification-image-item">
-                <img src="images/slack.jpeg" alt="Slack Project Management Certificate">
-            </a>
+                    <a href="YOUR_SLACK_PM_CREDENTIAL_URL_HERE" target="_blank" class="certification-image-item">
+                        <img src="images/slack.jpeg" alt="Slack Project Management Certificate - Parash Shah">
+                    </a>
 
-            <a href="YOUR_PYTHON_CREDENTIAL_URL_HERE" target="_blank" class="certification-image-item">
-                <img src="images/codeit.jpeg" alt="CODE IT Python Programmer Certificate">
-            </a>
+                    <a href="YOUR_PYTHON_CREDENTIAL_URL_HERE" target="_blank" class="certification-image-item">
+                        <img src="images/codeit.jpeg" alt="CODE IT Python Programmer Certificate - Parash Shah">
+                    </a>
 
-            <a href="YOUR_PQM_CREDENTIAL_URL_HERE" target="_blank" class="certification-image-item">
-                <img src="images/projectquality.jpeg" alt="Project Quality Management Certificate">
-            </a>
-            
-            <a href="YOUR_PQM_CREDENTIAL_URL_HERE" target="_blank" class="certification-image-item">
-                <img src="images/naxacrop.jpeg" alt="Project Quality Management Certificate">
-            </a>
-        </div>
-    </div>
-</section>
+                    <a href="YOUR_PQM_CREDENTIAL_URL_HERE" target="_blank" class="certification-image-item">
+                        <img src="images/projectquality.jpeg" alt="Project Quality Management Certificate - Parash Shah">
+                    </a>
+                    
+                    <a href="YOUR_NAXACROP_CREDENTIAL_URL_HERE" target="_blank" class="certification-image-item">
+                        <img src="images/naxacrop.jpeg" alt="NAXA Crop Project Certificate - Parash Shah">
+                    </a>
+                </div>
+            </div>
+        </section>
 
         <!-- Contact Section -->
         <section id="contact" class="section">
@@ -230,8 +279,8 @@
                     <p><strong>Location:</strong> Janakpur, Nepal</p>
                 </div>
                 <div class="social-media-links">
-                    <a href="https://www.linkedin.com/in/parash-mani-shah-219139307/" target="_blank" title="LinkedIn"><img src="images/icon-linkedin.svg" alt="LinkedIn"></a>
-                    <a href="https://github.com/Parash5664" target="_blank" title="GitHub"><img src="images/icon-github.svg" alt="GitHub"></a>
+                    <a href="https://www.linkedin.com/in/parash-mani-shah-219139307/" target="_blank" title="LinkedIn"><img src="images/icon-linkedin.svg" alt="LinkedIn Profile of Parash Shah"></a>
+                    <a href="https://github.com/Parash5664" target="_blank" title="GitHub"><img src="images/icon-github.svg" alt="GitHub Profile of Parash Shah"></a>
                 </div>
             </div>
         </section>
@@ -240,8 +289,8 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>© <span id="currentYear"></span> Parash Mani Shah. All Rights Reserved. </p>
-            <p>Inspired by modern web design.</p>
+            <p>© <span id="currentYear"></span> Parash Shah. All Rights Reserved. </p>
+            <p>Data Scientist & AI Developer in Nepal.</p>
         </div>
     </footer>
 
