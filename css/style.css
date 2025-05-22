@@ -14,25 +14,40 @@ a:hover { color: #0056b3; }
 /* Header */
 #main-header { background-color: #1C1C1E; padding: 1rem 0; position: fixed; width: 100%; top: 0; left: 0; z-index: 1000; transition: padding 0.3s ease; }
 nav { display: flex; justify-content: space-between; align-items: center; }
-.logo { font-weight: 700; color: #FFFFFF; letter-spacing: 1px; line-height: 1; text-decoration: none; }
-.logo.logo-stacked { font-size: 1.75rem; /* Desktop size */ }
-.logo-stacked span { display: block; line-height: 1.1; }
-.nav-links { list-style: none; display: flex; } /* Default for desktop */
+.logo {
+    font-size: 1.75rem; /* Desktop logo size */
+    font-weight: 700;
+    color: #FFFFFF;
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+/* Removed .logo-stacked and .logo-stacked span as HTML was simplified */
+.nav-links { list-style: none; display: flex; align-items: center; }
 .nav-links li { margin-left: 30px; }
 .nav-links a { font-family: 'Montserrat', sans-serif; font-weight: 600; color: #E0E0E0; font-size: 0.95rem; padding-bottom: 5px; position: relative; }
 .nav-links a:hover { color: #FFFFFF; }
 .nav-links a::after { content: ''; position: absolute; width: 0; height: 2px; bottom: 0; left: 0; background-color: #FFFFFF; transition: width 0.3s ease; }
 .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
 .nav-links a.active { color: #FFFFFF; }
-.burger { display: block; cursor: pointer; } /* Default for desktop, hidden by mobile styles below */
-.burger div { width: 25px; height: 3px; background-color: #FFFFFF; margin: 5px; transition: all 0.3s ease; }
+
+.burger {
+    display: none; /* Hidden on Desktop by default, shown on mobile */
+    cursor: pointer;
+}
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: #FFFFFF;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
 
 
 /* Hero Section - Desktop */
 .hero-section-split { display: flex; min-height: 100vh; width: 100%; overflow: hidden; box-sizing: border-box; background-color: #1C1C1E; }
-.hero-left-panel { flex-basis: 50%; background-color: #1C1C1E; color: #FFFFFF; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; padding: 40px 60px; box-sizing: border-box; padding-top: 70px; /* Offset for fixed header on desktop */ }
-.hero-right-panel { flex-basis: 50%; background-color: #f0f0f0; display: flex; align-items: center; justify-content: center; overflow: hidden; padding-top: 70px; /* Offset for fixed header on desktop */ }
-.hero-right-panel img { width: 100%; height: 100%; object-fit: cover; object-position: center top; } /* Desktop image position */
+.hero-left-panel { flex-basis: 50%; background-color: #1C1C1E; color: #FFFFFF; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; padding: 40px 60px; box-sizing: border-box; padding-top: 70px; }
+.hero-right-panel { flex-basis: 50%; background-color: #f0f0f0; display: flex; align-items: center; justify-content: center; overflow: hidden; padding-top: 70px; }
+.hero-right-panel img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
 .hero-text-content h1 { font-size: 3.5rem; margin-bottom: 20px; line-height: 1.2; color: #FFFFFF; }
 .hero-text-content p { font-size: 1.1rem; line-height: 1.7; margin-bottom: 30px; max-width: 600px; color: #E0E0E0; }
 .cta-button { display: inline-block; background-color: #007BFF; color: #fff; padding: 15px 35px; border-radius: 50px; font-weight: 700; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; transition: background-color 0.3s ease, transform 0.3s ease; box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3); border: none; }
@@ -42,7 +57,7 @@ nav { display: flex; justify-content: space-between; align-items: center; }
 
 /* Sections General */
 .section { padding: 80px 0; overflow: hidden; }
-#home.hero-section-split { padding: 0; } /* Remove general section padding from hero */
+#home.hero-section-split { padding: 0; }
 
 
 /* About Section */
@@ -79,9 +94,6 @@ nav { display: flex; justify-content: space-between; align-items: center; }
 /* Licenses & Certifications Section - IMAGE ONLY DISPLAY */
 .certifications-grid { display: grid; grid-template-columns: 1fr; gap: 25px; margin-top: 30px; }
 @media (min-width: 600px) { .certifications-grid { grid-template-columns: repeat(2, 1fr); } }
-/* Optional: For 3 columns on very wide screens, if you have many certificates
-@media (min-width: 992px) { .certifications-grid { grid-template-columns: repeat(3, 1fr); } }
-*/
 .certification-image-item { display: block; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease; background-color: #f9f9f9; }
 .certification-image-item:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
 .certification-image-item img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 11; object-fit: contain; border-radius: 7px; }
@@ -105,13 +117,19 @@ footer a { color: #00A0FF; }
 /* === RESPONSIVE STYLES === */
 /* =========================== */
 
-@media (max-width: 992px) { /* Tablet - General adjustments if needed */
+@media (max-width: 992px) { /* Tablet */
+    /* Desktop hero panels still need their padding for fixed header */
     .hero-left-panel, .hero-right-panel {
         padding-top: 70px;
     }
-    .hero-left-panel { padding-left: 30px; padding-right: 30px; }
+     .hero-left-panel { padding-left: 30px; padding-right: 30px; } /* Adjust padding for tablet hero */
     .hero-text-content h1 { font-size: 2.8rem; }
     .hero-text-content p { font-size: 1rem; }
+
+    /* Tablet Navigation - Still horizontal links, but burger becomes visible sooner */
+    .nav-links li { margin-left: 20px; }
+    .nav-links a { font-size: 0.9rem; }
+
     #about .about-content { gap: 30px; }
 }
 
@@ -124,68 +142,71 @@ footer a { color: #00A0FF; }
     h1 { font-size: 2.5rem; }
     h2 { font-size: 1.8rem; margin-bottom: 30px;}
 
-    /* New Mobile Header Style */
+    /* Mobile Header with Burger Menu */
     #main-header {
-        padding: 0 10px;
+        padding: 0 15px; /* Horizontal padding for header content */
         height: var(--mobile-header-height);
         display: flex;
         align-items: center;
     }
-    #main-header .container {
+    #main-header .container { /* Container inside header */
         width: 100%;
         padding: 0;
         display: flex;
-        align-items: center;
         justify-content: space-between;
-    }
-    .logo.logo-stacked {
-        font-size: 1rem;
-        line-height: 1.1;
-        margin-right: auto;
-        flex-shrink: 0;
-        color: #FFFFFF;
-    }
-    .logo-stacked span {
-        display: block;
-        line-height: 1.1;
+        align-items: center;
     }
 
-    .nav-links {
-        display: flex !important;
-        flex-direction: row;
+    .logo { /* Mobile logo */
+        font-size: 1.25rem; /* Adjust as needed */
+        /* Remove .logo-stacked specific styles for mobile if not used */
+    }
+
+    .nav-links { /* Slide-out panel */
+        position: fixed;
+        right: 0;
+        top: 0;
+        height: 100vh;
+        background-color: #1C1C1E; /* Dark background for panel */
+        display: flex;
+        flex-direction: column;
         align-items: center;
-        position: static;
-        height: auto;
-        background-color: transparent;
-        width: auto;
-        transform: none;
-        box-shadow: none;
-        padding-top: 0;
-        flex-grow: 0;
+        justify-content: space-around; /* Or center / flex-start */
+        width: 65%; /* Adjust width of panel */
+        max-width: 280px;
+        transform: translateX(100%); /* Hidden by default */
+        transition: transform 0.5s ease-in-out;
+        box-shadow: -2px 0 5px rgba(0,0,0,0.2);
+        padding-top: calc(var(--mobile-header-height) + 20px); /* Space below header */
+        z-index: 999; /* Below main header's z-index */
+    }
+    .nav-links.nav-active { /* When burger is clicked */
+        transform: translateX(0%); /* Slide in */
     }
     .nav-links li {
-        margin: 0 2px;
-        opacity: 1;
-        animation: none;
+        margin: 15px 0; /* Spacing for vertical links */
+        opacity: 0; /* For animation */
     }
-    .nav-links li:first-child { margin-left: 0; }
-    .nav-links li:last-child { margin-right: 0; }
     .nav-links a {
-        font-size: 0.65rem;
-        font-weight: 500;
-        padding: 5px 2px;
+        font-size: 1.1rem; /* Tappable link size */
         color: #E0E0E0;
-        white-space: nowrap;
+        padding: 10px;
     }
     .nav-links a:hover, .nav-links a.active { color: #FFFFFF; }
-    .nav-links a::after { height: 1px; background-color: #FFFFFF; }
+    .nav-links a::after { background-color: #FFFFFF; }
+
 
     .burger {
-        display: none !important;
+        display: block; /* Show burger on mobile */
+        z-index: 1001; /* Above nav panel when closed */
     }
+    /* Burger X animation */
+    .toggle .line1 { transform: rotate(-45deg) translate(-5px, 6px); }
+    .toggle .line2 { opacity: 0; }
+    .toggle .line3 { transform: rotate(45deg) translate(-5px, -6px); }
 
 
-    /* Mobile Hero - Image First, then Text (Corrected) */
+    /* Mobile Hero - Image First, then Text */
     #home.hero-section-split {
         padding-top: var(--mobile-header-height);
         display: flex;
@@ -198,7 +219,6 @@ footer a { color: #00A0FF; }
         width: 100%;
         padding-top: 0;
     }
-
     .hero-right-panel { /* Image Panel */
         order: 1;
         height: 50vh;   /* <<<< ADJUST THIS (e.g., 40vh to 55vh) */
@@ -209,9 +229,8 @@ footer a { color: #00A0FF; }
         width: 100%;
         height: 100%;
         object-fit: cover;
-        object-position: center top; /* <<<< Focus on top of image */
+        object-position: center top; /* Focus on top of image for pruff.jpg */
     }
-
     .hero-left-panel { /* Text Panel */
         order: 2;
         background-color: #1C1C1E;
@@ -220,11 +239,7 @@ footer a { color: #00A0FF; }
         text-align: left;
         display: flex;
         flex-direction: column;
-        /* justify-content: center; /* Remove if text should start at top */
         flex-grow: 1;
-    }
-    .hero-text-content {
-        width: 100%;
     }
     .hero-text-content h1 {
         font-size: 1.8rem;
@@ -257,14 +272,11 @@ footer a { color: #00A0FF; }
         color: #1C1C1E;
     }
 
-
-    /* About Section Mobile */
     #about .about-content { flex-direction: column; text-align: center; }
     #about .about-image-container { margin-bottom: 30px; }
     #about .about-text { text-align: center; }
 }
 
-/* Animation for nav links fade in (used by desktop burger if it were active) */
 @keyframes navLinkFade {
     from { opacity: 0; transform: translateX(50px); }
     to { opacity: 1; transform: translateX(0px); }
