@@ -20,8 +20,16 @@ nav { display: flex; justify-content: space-between; align-items: center; }
     color: #FFFFFF;
     letter-spacing: 1px;
     text-decoration: none;
+    /* If you want stacked logo on desktop, uncomment display:flex and flex-direction here
+       AND ensure your HTML has class="logo logo-stacked" with <span>s */
+    /* display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1.0; */
 }
-/* Removed .logo-stacked and .logo-stacked span as HTML was simplified */
+/* Styles for stacked logo if HTML is <a class="logo logo-stacked"><span>...</span></a> */
+/* .logo.logo-stacked span { display: block; line-height: 1.0; } */
+
 .nav-links { list-style: none; display: flex; align-items: center; }
 .nav-links li { margin-left: 30px; }
 .nav-links a { font-family: 'Montserrat', sans-serif; font-weight: 600; color: #E0E0E0; font-size: 0.95rem; padding-bottom: 5px; position: relative; }
@@ -31,7 +39,7 @@ nav { display: flex; justify-content: space-between; align-items: center; }
 .nav-links a.active { color: #FFFFFF; }
 
 .burger {
-    display: none; /* Hidden on Desktop by default, shown on mobile */
+    display: none; /* Hidden on Desktop by default, shown on mobile by media query */
     cursor: pointer;
 }
 .burger div {
@@ -42,8 +50,7 @@ nav { display: flex; justify-content: space-between; align-items: center; }
     transition: all 0.3s ease;
 }
 
-
-/* Hero Section - Desktop */
+/* Hero Section - Desktop (Using your provided styles) */
 .hero-section-split { display: flex; min-height: 100vh; width: 100%; overflow: hidden; box-sizing: border-box; background-color: #1C1C1E; }
 .hero-left-panel { flex-basis: 50%; background-color: #1C1C1E; color: #FFFFFF; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; padding: 40px 60px; box-sizing: border-box; padding-top: 70px; }
 .hero-right-panel { flex-basis: 50%; background-color: #f0f0f0; display: flex; align-items: center; justify-content: center; overflow: hidden; padding-top: 70px; }
@@ -59,15 +66,14 @@ nav { display: flex; justify-content: space-between; align-items: center; }
 .section { padding: 80px 0; overflow: hidden; }
 #home.hero-section-split { padding: 0; }
 
-
-/* About Section */
+/* About Section (Using your provided styles) */
 #about .about-content { display: flex; align-items: center; gap: 50px; }
 #about .about-image-container { flex-basis: 35%; text-align: center; }
 #about .profile-image { width: 100%; max-width: 300px; height: auto; border-radius: 15px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); object-fit: cover; }
 #about .about-text { flex-basis: 65%; text-align: left; }
 #about .about-text p { font-size: 1.05rem; color: #555; }
 
-/* Experience Section */
+/* Experience Section (Using your provided styles) */
 #experience .experience-grid.four-columns { display: grid; grid-template-columns: 1fr; gap: 25px; margin-top: 40px; }
 @media (min-width: 768px) { #experience .experience-grid.four-columns { grid-template-columns: repeat(2, 1fr); } }
 .experience-item { background-color: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); display: flex; flex-direction: column; text-align: left; }
@@ -80,26 +86,77 @@ nav { display: flex; justify-content: space-between; align-items: center; }
 .experience-text-content ul { list-style-position: outside; padding-left: 18px; margin-bottom: 0; font-size: 0.85rem; }
 .experience-text-content ul li { margin-bottom: 5px; line-height: 1.5; }
 
-/* Skills Section */
+/* Skills Section (Using your provided styles) */
 #skills .skills-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 30px; }
 #skills .skills-list span { background-color: #007BFF; color: #fff; padding: 10px 20px; border-radius: 25px; font-size: 0.95rem; font-weight: 600; box-shadow: 0 2px 5px rgba(0, 123, 255, 0.2); transition: transform 0.2s ease-in-out; }
 #skills .skills-list span:hover { transform: translateY(-3px); }
 
-/* Education Section */
+/* Education Section (Using your provided styles) */
 .education-item { background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 20px; text-align: left; }
 .education-item:last-child { margin-bottom: 0; }
 .education-item h3 { color: #333; margin-bottom: 5px; }
 .education-item .institution-details { font-size: 1rem; color: #555; font-style: italic; margin-bottom: 0; }
 
-/* Licenses & Certifications Section - IMAGE ONLY DISPLAY */
+/* Licenses & Certifications Section (Using your provided styles) */
 .certifications-grid { display: grid; grid-template-columns: 1fr; gap: 25px; margin-top: 30px; }
 @media (min-width: 600px) { .certifications-grid { grid-template-columns: repeat(2, 1fr); } }
 .certification-image-item { display: block; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease; background-color: #f9f9f9; }
 .certification-image-item:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
 .certification-image-item img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 11; object-fit: contain; border-radius: 7px; }
 
-/* Contact Section */
+/* === NEW BLOG SECTION STYLES (for index.html) === */
+#blog { background-color: #fff; }
+.blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
+.blog-card { background-color: #FFFFFF; border-radius: 10px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08); overflow: hidden; display: flex; flex-direction: column; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.blog-card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12); }
+.blog-card-image-link { display: block; width: 100%; background-color: #f0f0f0; padding-top: 45%; position: relative; overflow: hidden; border-top-left-radius: 10px; border-top-right-radius: 10px; }
+.blog-card-image { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; display: block; }
+.blog-card-content { padding: 20px 25px 25px; display: flex; flex-direction: column; flex-grow: 1; }
+.blog-card-meta { font-size: 0.8rem; color: #777; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px; }
+.blog-card-title { font-size: 1.3rem; color: #333; margin-bottom: 10px; line-height: 1.4; }
+.blog-card-title a { color: inherit; text-decoration: none; }
+.blog-card-title a:hover { color: #007BFF; }
+.blog-card-excerpt { font-size: 0.95rem; color: #555; line-height: 1.6; margin-bottom: 20px; flex-grow: 1; }
+.blog-card-readmore { display: inline-block; font-size: 0.9rem; font-weight: 600; color: #007BFF; text-decoration: none; text-transform: uppercase; letter-spacing: 0.5px; align-self: flex-start; transition: color 0.3s ease; }
+.blog-card-readmore .arrow { margin-left: 5px; transition: transform 0.3s ease; display: inline-block; }
+.blog-card-readmore:hover { color: #0056b3; }
+.blog-card-readmore:hover .arrow { transform: translateX(4px); }
+@media (max-width: 600px) { .blog-grid { grid-template-columns: 1fr; } .blog-card-title { font-size: 1.2rem; } .blog-card-excerpt { font-size: 0.9rem; } .blog-card-image-link { padding-top: 56.25%; /* 16:9 for mobile blog card image */ } }
+
+/* === NEW BLOG POST PAGE SPECIFIC STYLES (for blog/*.html) === */
+body.blog-post-page {}
+header#main-header.blog-post-header { position: static; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+header#main-header.blog-post-header .logo,
+header#main-header.blog-post-header .nav-links a { color: #fff; /* Darker text for light header background */ }
+header#main-header.blog-post-header .burger div { background-color: #fff; }
+header#main-header.blog-post-header .nav-links a:hover { color: #007BFF; }
+header#main-header.blog-post-header .nav-links a.active { color: #007BFF; }
+header#main-header.blog-post-header .nav-links a::after { background-color: #007BFF; }
+
+main.blog-post-main-content { padding-top: 40px; padding-bottom: 60px; }
+.blog-post-full .container { max-width: 800px; }
+.blog-post-featured-image { width: 100%; max-height: 450px; object-fit: cover; border-radius: 8px; margin-bottom: 30px; }
+.blog-post-title { font-size: 2.5rem; color: #222; margin-bottom: 10px; line-height: 1.3; text-align: left;}
+.blog-post-meta-details { font-size: 0.9rem; color: #666; margin-bottom: 30px; border-bottom: 1px solid #eee; padding-bottom: 15px; text-align: left;}
+.blog-post-content-area { font-size: 1.05rem; line-height: 1.8; color: #333; }
+.blog-post-content-area p { margin-bottom: 1.5em; }
+.blog-post-content-area h2 { font-size: 1.8rem; margin-top: 2.5em; margin-bottom: 0.8em; color: #333; text-align: left; border-bottom: 2px solid #007BFF; padding-bottom: 5px; display: inline-block; }
+.blog-post-content-area h2::after { display: none; }
+.blog-post-content-area h3 { font-size: 1.5rem; margin-top: 2em; margin-bottom: 0.6em; color: #444; text-align: left;}
+.blog-post-content-area ul, .blog-post-content-area ol { margin-bottom: 1.5em; padding-left: 25px; }
+.blog-post-content-area ul li, .blog-post-content-area ol li { margin-bottom: 0.5em; }
+.blog-post-content-area blockquote { border-left: 4px solid #007BFF; padding-left: 20px; margin: 2em 0; font-style: italic; color: #555; }
+.blog-post-content-area img { max-width: 100%; height: auto; border-radius: 6px; margin: 1.5em 0; }
+.back-to-blog-link { display: inline-block; margin-top: 40px; font-weight: 600; color: #007BFF; text-decoration: none; }
+.back-to-blog-link:hover { text-decoration: underline; }
+footer.blog-post-footer { background-color: #f8f9fa; color: #555; text-align: center; padding: 20px 0; font-size: 0.9rem; border-top: 1px solid #eee; }
+footer.blog-post-footer p { margin-bottom: 0.25rem; }
+footer.blog-post-footer a { color: #007BFF; }
+@media (max-width: 768px) { .blog-post-title { font-size: 2rem; } .blog-post-content-area { font-size: 1rem; } .blog-post-content-area h2 { font-size: 1.6rem; } .blog-post-content-area h3 { font-size: 1.3rem; } main.blog-post-main-content { padding-top: 20px; } }
+
+/* Contact Section (Using your provided styles) */
 #contact { text-align: center; }
+#contact.alt-bg { background-color: #F8F9FA; }
 .contact-details p { font-size: 1.1rem; margin-bottom: 0.5rem; }
 .contact-details strong { font-family: 'Montserrat', sans-serif; }
 .social-media-links { margin-top: 30px; }
@@ -107,170 +164,86 @@ nav { display: flex; justify-content: space-between; align-items: center; }
 .social-media-links img { width: 32px; height: 32px; transition: transform 0.3s ease; filter: grayscale(50%) opacity(0.7); }
 .social-media-links img:hover { transform: scale(1.2); filter: grayscale(0%) opacity(1); }
 
-/* Footer */
+/* Footer (Using your provided styles) */
 footer { background-color: #333333; color: #E0E0E0; text-align: center; padding: 30px 0; font-size: 0.9rem; }
 footer p { margin-bottom: 0.25rem; }
 footer a { color: #00A0FF; }
 
-
-/* =========================== */
-/* === RESPONSIVE STYLES === */
-/* =========================== */
-
+/* Responsive Styles (Using your provided mobile responsive styles as a base) */
 @media (max-width: 992px) { /* Tablet */
-    /* Desktop hero panels still need their padding for fixed header */
-    .hero-left-panel, .hero-right-panel {
-        padding-top: 70px;
-    }
-     .hero-left-panel { padding-left: 30px; padding-right: 30px; } /* Adjust padding for tablet hero */
+    .hero-left-panel, .hero-right-panel { padding-top: 70px; }
+    .hero-left-panel { padding-left: 30px; padding-right: 30px; }
     .hero-text-content h1 { font-size: 2.8rem; }
     .hero-text-content p { font-size: 1rem; }
-
-    /* Tablet Navigation - Still horizontal links, but burger becomes visible sooner */
-    .nav-links li { margin-left: 20px; }
-    .nav-links a { font-size: 0.9rem; }
-
     #about .about-content { gap: 30px; }
+
+    /* Burger Menu for Tablet and Mobile */
+    .burger { display: block; }
+    .nav-links {
+        position: fixed; right: 0; top: 0;
+        background-color: #1C1C1E; height: 100vh; width: 70%; max-width: 280px;
+        flex-direction: column; align-items: center; justify-content: flex-start;
+        padding-top: calc(var(--mobile-header-height, 60px) + 20px); /* Fallback */
+        transform: translateX(100%); transition: transform 0.5s ease-in-out;
+        box-shadow: -2px 0 5px rgba(0,0,0,0.2); z-index: 999; display: flex;
+    }
+    .nav-links.nav-active { transform: translateX(0%); }
+    .nav-links li { margin: 15px 0; width: 100%; text-align: center; opacity: 0; }
+    .nav-links li a { font-size: 1rem; padding: 10px 0; display: block; width: 100%; color: #E0E0E0; }
+    .nav-links li a:hover, .nav-links li a.active { color: #FFFFFF; background-color: rgba(255,255,255,0.1); }
+    .nav-links a::after { display: none; }
 }
 
 @media (max-width: 768px) { /* Mobile */
     :root {
         --mobile-header-height: 55px; /* <<<< ADJUST THIS to your actual mobile header height */
     }
-
     .container { width: 95%; }
-    h1 { font-size: 2.5rem; }
-    h2 { font-size: 1.8rem; margin-bottom: 30px;}
+    h1 { font-size: 2.5rem; } h2 { font-size: 1.8rem; margin-bottom: 30px;}
 
-    /* Mobile Header with Burger Menu */
-    #main-header {
-        padding: 0 15px; /* Horizontal padding for header content */
-        height: var(--mobile-header-height);
-        display: flex;
-        align-items: center;
+    #main-header { padding: 0 15px; height: var(--mobile-header-height); }
+    #main-header .container { width: 100%; padding: 0; } /* Ensure container takes full width */
+    
+    .logo { /* Mobile logo using single line text */
+        font-size: 1.2rem; /* Adjust size of "PARASH MANI SHAH" on mobile */
+        line-height: var(--mobile-header-height); /* Helps vertically center if header has fixed height */
     }
-    #main-header .container { /* Container inside header */
-        width: 100%;
-        padding: 0;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
+    /* If using stacked logo HTML, spans are hidden by default on mobile by below .nav-links styles.
+       If you want stacked logo on mobile too, you'd need different approach or remove span hide.
+       For simplicity and matching your base, we're assuming single line text for logo on mobile.
+    */
 
-    .logo { /* Mobile logo */
-        font-size: 1.25rem; /* Adjust as needed */
-        /* Remove .logo-stacked specific styles for mobile if not used */
-    }
-
-    .nav-links { /* Slide-out panel */
-        position: fixed;
-        right: 0;
-        top: 0;
-        height: 100vh;
-        background-color: #1C1C1E; /* Dark background for panel */
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-around; /* Or center / flex-start */
-        width: 65%; /* Adjust width of panel */
-        max-width: 280px;
-        transform: translateX(100%); /* Hidden by default */
-        transition: transform 0.5s ease-in-out;
+    .nav-links { /* Copied from your provided CSS - slide out panel */
+        position: fixed; right: 0; top: 0; height: 100vh;
+        background-color: #1C1C1E; display: flex; flex-direction: column;
+        align-items: center; justify-content: space-around; /* Or center / flex-start */
+        width: 65%; max-width: 280px;
+        transform: translateX(100%); transition: transform 0.5s ease-in-out;
         box-shadow: -2px 0 5px rgba(0,0,0,0.2);
-        padding-top: calc(var(--mobile-header-height) + 20px); /* Space below header */
-        z-index: 999; /* Below main header's z-index */
+        padding-top: calc(var(--mobile-header-height) + 20px);
+        z-index: 999;
     }
-    .nav-links.nav-active { /* When burger is clicked */
-        transform: translateX(0%); /* Slide in */
-    }
-    .nav-links li {
-        margin: 15px 0; /* Spacing for vertical links */
-        opacity: 0; /* For animation */
-    }
-    .nav-links a {
-        font-size: 1.1rem; /* Tappable link size */
-        color: #E0E0E0;
-        padding: 10px;
-    }
+    .nav-links.nav-active { transform: translateX(0%); }
+    .nav-links li { margin: 15px 0; opacity: 0; }
+    .nav-links a { font-size: 1.1rem; color: #E0E0E0; padding: 10px; }
     .nav-links a:hover, .nav-links a.active { color: #FFFFFF; }
     .nav-links a::after { background-color: #FFFFFF; }
 
-
-    .burger {
-        display: block; /* Show burger on mobile */
-        z-index: 1001; /* Above nav panel when closed */
-    }
-    /* Burger X animation */
+    .burger { display: block; z-index: 1001; }
     .toggle .line1 { transform: rotate(-45deg) translate(-5px, 6px); }
     .toggle .line2 { opacity: 0; }
     .toggle .line3 { transform: rotate(45deg) translate(-5px, -6px); }
 
-
-    /* Mobile Hero - Image First, then Text */
-    #home.hero-section-split {
-        padding-top: var(--mobile-header-height);
-        display: flex;
-        flex-direction: column;
-        min-height: calc(100vh - var(--mobile-header-height));
-        box-sizing: border-box;
-    }
-    .hero-left-panel, .hero-right-panel {
-        flex-basis: auto;
-        width: 100%;
-        padding-top: 0;
-    }
-    .hero-right-panel { /* Image Panel */
-        order: 1;
-        height: 50vh;   /* <<<< ADJUST THIS (e.g., 40vh to 55vh) */
-        background-color: #e0e0e0;
-        flex-shrink: 0;
-    }
-    .hero-right-panel img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center top; /* Focus on top of image for pruff.jpg */
-    }
-    .hero-left-panel { /* Text Panel */
-        order: 2;
-        background-color: #1C1C1E;
-        color: #FFFFFF;
-        padding: 20px 20px 25px 20px;
-        text-align: left;
-        display: flex;
-        flex-direction: column;
-        flex-grow: 1;
-    }
-    .hero-text-content h1 {
-        font-size: 1.8rem;
-        line-height: 1.25;
-        margin-bottom: 8px;
-        text-align: left;
-        color: #FFFFFF;
-    }
-    .hero-text-content p {
-        font-size: 0.85rem;
-        line-height: 1.5;
-        margin-bottom: 15px;
-        text-align: left;
-        color: #E0E0E0;
-    }
-    .hero-cta {
-        display: inline-block;
-        margin-top: auto;
-        background-color: transparent;
-        color: #FFFFFF;
-        border: 2px solid #FFFFFF;
-        padding: 8px 20px;
-        border-radius: 30px;
-        font-size: 0.85rem;
-        font-weight: 600;
-        align-self: flex-start;
-    }
-    .hero-cta:hover {
-        background-color: #FFFFFF;
-        color: #1C1C1E;
-    }
+    /* Mobile Hero (Using your provided hero styles as base and ensuring fixes) */
+    #home.hero-section-split { padding-top: var(--mobile-header-height); display: flex; flex-direction: column; min-height: calc(100vh - var(--mobile-header-height)); box-sizing: border-box; }
+    .hero-left-panel, .hero-right-panel { flex-basis: auto; width: 100%; padding-top: 0; }
+    .hero-right-panel { order: 1; height: 50vh; background-color: #e0e0e0; flex-shrink: 0; }
+    .hero-right-panel img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+    .hero-left-panel { order: 2; background-color: #1C1C1E; color: #FFFFFF; padding: 20px 20px 25px 20px; text-align: left; display: flex; flex-direction: column; flex-grow: 1; }
+    .hero-text-content h1 { font-size: 1.8rem; line-height: 1.25; margin-bottom: 8px; text-align: left; color: #FFFFFF; }
+    .hero-text-content p { font-size: 0.85rem; line-height: 1.5; margin-bottom: 15px; text-align: left; color: #E0E0E0; }
+    .hero-cta { display: inline-block; margin-top: auto; background-color: transparent; color: #FFFFFF; border: 2px solid #FFFFFF; padding: 8px 20px; border-radius: 30px; font-size: 0.85rem; font-weight: 600; align-self: flex-start; }
+    .hero-cta:hover { background-color: #FFFFFF; color: #1C1C1E; }
 
     #about .about-content { flex-direction: column; text-align: center; }
     #about .about-image-container { margin-bottom: 30px; }
