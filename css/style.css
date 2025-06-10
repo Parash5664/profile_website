@@ -13,23 +13,10 @@ a:hover { color: #0056b3; }
 
 /* Header */
 #main-header { background-color: #1C1C1E; padding: 1rem 0; position: fixed; width: 100%; top: 0; left: 0; z-index: 1000; transition: padding 0.3s ease; }
-nav { display: flex; justify-content: space-between; align-items: center; }
-.logo {
-    font-size: 1.75rem; /* Desktop logo size */
-    font-weight: 700;
-    color: #FFFFFF;
-    letter-spacing: 1px;
-    text-decoration: none;
-    /* If you want stacked logo on desktop, uncomment display:flex and flex-direction here
-       AND ensure your HTML has class="logo logo-stacked" with <span>s */
-    /* display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    line-height: 1.0; */
-}
-/* Styles for stacked logo if HTML is <a class="logo logo-stacked"><span>...</span></a> */
-/* .logo.logo-stacked span { display: block; line-height: 1.0; } */
-
+#main-header nav.container { display: flex; justify-content: space-between; align-items: center; }
+.logo { font-family: 'Montserrat', sans-serif; font-weight: 700; color: #FFFFFF; letter-spacing: 1px; text-decoration: none; display: flex; flex-direction: column; align-items: flex-start; }
+.logo.logo-stacked { font-size: 1.6rem; line-height: 1.0; padding: 5px 0; }
+.logo-stacked span { color: #FFFFFF; }
 .nav-links { list-style: none; display: flex; align-items: center; }
 .nav-links li { margin-left: 30px; }
 .nav-links a { font-family: 'Montserrat', sans-serif; font-weight: 600; color: #E0E0E0; font-size: 0.95rem; padding-bottom: 5px; position: relative; }
@@ -37,20 +24,10 @@ nav { display: flex; justify-content: space-between; align-items: center; }
 .nav-links a::after { content: ''; position: absolute; width: 0; height: 2px; bottom: 0; left: 0; background-color: #FFFFFF; transition: width 0.3s ease; }
 .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
 .nav-links a.active { color: #FFFFFF; }
+.burger { display: none; cursor: pointer; }
+.burger div { width: 25px; height: 3px; background-color: #FFFFFF; margin: 5px; transition: all 0.3s ease; }
 
-.burger {
-    display: none; /* Hidden on Desktop by default, shown on mobile by media query */
-    cursor: pointer;
-}
-.burger div {
-    width: 25px;
-    height: 3px;
-    background-color: #FFFFFF;
-    margin: 5px;
-    transition: all 0.3s ease;
-}
-
-/* Hero Section - Desktop (Using your provided styles) */
+/* Hero Section */
 .hero-section-split { display: flex; min-height: 100vh; width: 100%; overflow: hidden; box-sizing: border-box; background-color: #1C1C1E; }
 .hero-left-panel { flex-basis: 50%; background-color: #1C1C1E; color: #FFFFFF; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; padding: 40px 60px; box-sizing: border-box; padding-top: 70px; }
 .hero-right-panel { flex-basis: 50%; background-color: #f0f0f0; display: flex; align-items: center; justify-content: center; overflow: hidden; padding-top: 70px; }
@@ -66,14 +43,13 @@ nav { display: flex; justify-content: space-between; align-items: center; }
 .section { padding: 80px 0; overflow: hidden; }
 #home.hero-section-split { padding: 0; }
 
-/* About Section (Using your provided styles) */
+/* About, Experience, Skills, Certifications Styles */
+/* These sections remain unchanged from previous versions */
 #about .about-content { display: flex; align-items: center; gap: 50px; }
 #about .about-image-container { flex-basis: 35%; text-align: center; }
 #about .profile-image { width: 100%; max-width: 300px; height: auto; border-radius: 15px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); object-fit: cover; }
 #about .about-text { flex-basis: 65%; text-align: left; }
 #about .about-text p { font-size: 1.05rem; color: #555; }
-
-/* Experience Section (Using your provided styles) */
 #experience .experience-grid.four-columns { display: grid; grid-template-columns: 1fr; gap: 25px; margin-top: 40px; }
 @media (min-width: 768px) { #experience .experience-grid.four-columns { grid-template-columns: repeat(2, 1fr); } }
 .experience-item { background-color: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); display: flex; flex-direction: column; text-align: left; }
@@ -85,26 +61,20 @@ nav { display: flex; justify-content: space-between; align-items: center; }
 .experience-text-content strong { display: block; margin-top: 10px; margin-bottom: 5px; font-weight: 600; color: #333; font-size: 0.9rem; }
 .experience-text-content ul { list-style-position: outside; padding-left: 18px; margin-bottom: 0; font-size: 0.85rem; }
 .experience-text-content ul li { margin-bottom: 5px; line-height: 1.5; }
-
-/* Skills Section (Using your provided styles) */
 #skills .skills-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 30px; }
 #skills .skills-list span { background-color: #007BFF; color: #fff; padding: 10px 20px; border-radius: 25px; font-size: 0.95rem; font-weight: 600; box-shadow: 0 2px 5px rgba(0, 123, 255, 0.2); transition: transform 0.2s ease-in-out; }
 #skills .skills-list span:hover { transform: translateY(-3px); }
-
-/* Education Section (Using your provided styles) */
 .education-item { background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 20px; text-align: left; }
 .education-item:last-child { margin-bottom: 0; }
 .education-item h3 { color: #333; margin-bottom: 5px; }
 .education-item .institution-details { font-size: 1rem; color: #555; font-style: italic; margin-bottom: 0; }
-
-/* Licenses & Certifications Section (Using your provided styles) */
 .certifications-grid { display: grid; grid-template-columns: 1fr; gap: 25px; margin-top: 30px; }
 @media (min-width: 600px) { .certifications-grid { grid-template-columns: repeat(2, 1fr); } }
 .certification-image-item { display: block; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease; background-color: #f9f9f9; }
 .certification-image-item:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
 .certification-image-item img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 11; object-fit: contain; border-radius: 7px; }
 
-/* === NEW BLOG SECTION STYLES (for index.html) === */
+/* Blog Section on Index Page */
 #blog { background-color: #fff; }
 .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
 .blog-card { background-color: #FFFFFF; border-radius: 10px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08); overflow: hidden; display: flex; flex-direction: column; transition: transform 0.3s ease, box-shadow 0.3s ease; }
@@ -121,17 +91,18 @@ nav { display: flex; justify-content: space-between; align-items: center; }
 .blog-card-readmore .arrow { margin-left: 5px; transition: transform 0.3s ease; display: inline-block; }
 .blog-card-readmore:hover { color: #0056b3; }
 .blog-card-readmore:hover .arrow { transform: translateX(4px); }
-@media (max-width: 600px) { .blog-grid { grid-template-columns: 1fr; } .blog-card-title { font-size: 1.2rem; } .blog-card-excerpt { font-size: 0.9rem; } .blog-card-image-link { padding-top: 56.25%; /* 16:9 for mobile blog card image */ } }
+@media (max-width: 600px) { .blog-grid { grid-template-columns: 1fr; } .blog-card-title { font-size: 1.2rem; } .blog-card-excerpt { font-size: 0.9rem; } .blog-card-image-link { padding-top: 56.25%; } }
 
-/* === NEW BLOG POST PAGE SPECIFIC STYLES (for blog/*.html) === */
+/* === UPDATED/NEW BLOG POST PAGE SPECIFIC STYLES === */
 body.blog-post-page {}
-header#main-header.blog-post-header { position: static; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+header#main-header.blog-post-header { position: static; background-color: #1C1C1E; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
 header#main-header.blog-post-header .logo,
-header#main-header.blog-post-header .nav-links a { color: #fff; /* Darker text for light header background */ }
-header#main-header.blog-post-header .burger div { background-color: #fff; }
-header#main-header.blog-post-header .nav-links a:hover { color: #007BFF; }
-header#main-header.blog-post-header .nav-links a.active { color: #007BFF; }
-header#main-header.blog-post-header .nav-links a::after { background-color: #007BFF; }
+header#main-header.blog-post-header .logo.logo-stacked span,
+header#main-header.blog-post-header .nav-links a { color: #FFFFFF; }
+header#main-header.blog-post-header .burger div { background-color: #FFFFFF; }
+header#main-header.blog-post-header .nav-links a:hover { color: #00A0FF; }
+header#main-header.blog-post-header .nav-links a.active { color: #FFFFFF; }
+header#main-header.blog-post-header .nav-links a.active::after { background-color: #FFFFFF; width: 100%;}
 
 main.blog-post-main-content { padding-top: 40px; padding-bottom: 60px; }
 .blog-post-full .container { max-width: 800px; }
@@ -146,15 +117,33 @@ main.blog-post-main-content { padding-top: 40px; padding-bottom: 60px; }
 .blog-post-content-area ul, .blog-post-content-area ol { margin-bottom: 1.5em; padding-left: 25px; }
 .blog-post-content-area ul li, .blog-post-content-area ol li { margin-bottom: 0.5em; }
 .blog-post-content-area blockquote { border-left: 4px solid #007BFF; padding-left: 20px; margin: 2em 0; font-style: italic; color: #555; }
-.blog-post-content-area img { max-width: 100%; height: auto; border-radius: 6px; margin: 1.5em 0; }
-.back-to-blog-link { display: inline-block; margin-top: 40px; font-weight: 600; color: #007BFF; text-decoration: none; }
-.back-to-blog-link:hover { text-decoration: underline; }
-footer.blog-post-footer { background-color: #f8f9fa; color: #555; text-align: center; padding: 20px 0; font-size: 0.9rem; border-top: 1px solid #eee; }
-footer.blog-post-footer p { margin-bottom: 0.25rem; }
-footer.blog-post-footer a { color: #007BFF; }
-@media (max-width: 768px) { .blog-post-title { font-size: 2rem; } .blog-post-content-area { font-size: 1rem; } .blog-post-content-area h2 { font-size: 1.6rem; } .blog-post-content-area h3 { font-size: 1.3rem; } main.blog-post-main-content { padding-top: 20px; } }
 
-/* Contact Section (Using your provided styles) */
+/* NEW styles for images WITHIN blog content */
+.blog-post-content-area .blog-content-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 2em auto;
+    display: block;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+/* NEW styles for side-by-side content */
+.content-image-pair { display: flex; flex-direction: row; gap: 30px; align-items: center; margin: 3em 0; }
+.content-image-pair.reverse { flex-direction: row-reverse; }
+.content-image-container { flex: 1 1 40%; }
+.content-text-container { flex: 1 1 60%; }
+.blog-post-content-area .content-text-container h2 { margin-top: 0; border-bottom: none; padding-bottom: 0; display: block; font-size: 1.6rem; }
+.section-divider { border: 0; height: 1px; background-color: #eee; margin: 4em auto; }
+@media (max-width: 768px) {
+    .content-image-pair, .content-image-pair.reverse { flex-direction: column; text-align: center; }
+    .blog-post-content-area .content-text-container h2 { text-align: center; }
+    .content-text-container { margin-top: 20px; }
+    .blog-post-title { font-size: 2rem; } .blog-post-content-area { font-size: 1rem; } .blog-post-content-area h2 { font-size: 1.6rem; } .blog-post-content-area h3 { font-size: 1.3rem; } main.blog-post-main-content { padding-top: 20px; }
+}
+/* END OF NEW BLOG STYLES */
+
+
+/* Contact Section */
 #contact { text-align: center; }
 #contact.alt-bg { background-color: #F8F9FA; }
 .contact-details p { font-size: 1.1rem; margin-bottom: 0.5rem; }
@@ -164,12 +153,12 @@ footer.blog-post-footer a { color: #007BFF; }
 .social-media-links img { width: 32px; height: 32px; transition: transform 0.3s ease; filter: grayscale(50%) opacity(0.7); }
 .social-media-links img:hover { transform: scale(1.2); filter: grayscale(0%) opacity(1); }
 
-/* Footer (Using your provided styles) */
+/* Footer */
 footer { background-color: #333333; color: #E0E0E0; text-align: center; padding: 30px 0; font-size: 0.9rem; }
 footer p { margin-bottom: 0.25rem; }
 footer a { color: #00A0FF; }
 
-/* Responsive Styles (Using your provided mobile responsive styles as a base) */
+/* Responsive Styles */
 @media (max-width: 992px) { /* Tablet */
     .hero-left-panel, .hero-right-panel { padding-top: 70px; }
     .hero-left-panel { padding-left: 30px; padding-right: 30px; }
@@ -177,16 +166,8 @@ footer a { color: #00A0FF; }
     .hero-text-content p { font-size: 1rem; }
     #about .about-content { gap: 30px; }
 
-    /* Burger Menu for Tablet and Mobile */
     .burger { display: block; }
-    .nav-links {
-        position: fixed; right: 0; top: 0;
-        background-color: #1C1C1E; height: 100vh; width: 70%; max-width: 280px;
-        flex-direction: column; align-items: center; justify-content: flex-start;
-        padding-top: calc(var(--mobile-header-height, 60px) + 20px); /* Fallback */
-        transform: translateX(100%); transition: transform 0.5s ease-in-out;
-        box-shadow: -2px 0 5px rgba(0,0,0,0.2); z-index: 999; display: flex;
-    }
+    .nav-links { position: fixed; right: 0; top: 0; background-color: #1C1C1E; height: 100vh; width: 70%; max-width: 280px; flex-direction: column; align-items: center; justify-content: flex-start; padding-top: calc(var(--mobile-header-height, 60px) + 20px); transform: translateX(100%); transition: transform 0.5s ease-in-out; box-shadow: -2px 0 5px rgba(0,0,0,0.2); z-index: 999; display: flex; }
     .nav-links.nav-active { transform: translateX(0%); }
     .nav-links li { margin: 15px 0; width: 100%; text-align: center; opacity: 0; }
     .nav-links li a { font-size: 1rem; padding: 10px 0; display: block; width: 100%; color: #E0E0E0; }
@@ -195,46 +176,19 @@ footer a { color: #00A0FF; }
 }
 
 @media (max-width: 768px) { /* Mobile */
-    :root {
-        --mobile-header-height: 55px; /* <<<< ADJUST THIS to your actual mobile header height */
-    }
+    :root { --mobile-header-height: 55px; /* <<< ADJUST THIS */ }
     .container { width: 95%; }
     h1 { font-size: 2.5rem; } h2 { font-size: 1.8rem; margin-bottom: 30px;}
 
     #main-header { padding: 0 15px; height: var(--mobile-header-height); }
-    #main-header .container { width: 100%; padding: 0; } /* Ensure container takes full width */
-    
-    .logo { /* Mobile logo using single line text */
-        font-size: 1.2rem; /* Adjust size of "PARASH MANI SHAH" on mobile */
-        line-height: var(--mobile-header-height); /* Helps vertically center if header has fixed height */
-    }
-    /* If using stacked logo HTML, spans are hidden by default on mobile by below .nav-links styles.
-       If you want stacked logo on mobile too, you'd need different approach or remove span hide.
-       For simplicity and matching your base, we're assuming single line text for logo on mobile.
-    */
+    #main-header .container { width: 100%; padding: 0; }
+    .logo { font-size: 1.2rem; line-height: var(--mobile-header-height); white-space: nowrap; }
 
-    .nav-links { /* Copied from your provided CSS - slide out panel */
-        position: fixed; right: 0; top: 0; height: 100vh;
-        background-color: #1C1C1E; display: flex; flex-direction: column;
-        align-items: center; justify-content: space-around; /* Or center / flex-start */
-        width: 65%; max-width: 280px;
-        transform: translateX(100%); transition: transform 0.5s ease-in-out;
-        box-shadow: -2px 0 5px rgba(0,0,0,0.2);
-        padding-top: calc(var(--mobile-header-height) + 20px);
-        z-index: 999;
-    }
-    .nav-links.nav-active { transform: translateX(0%); }
-    .nav-links li { margin: 15px 0; opacity: 0; }
-    .nav-links a { font-size: 1.1rem; color: #E0E0E0; padding: 10px; }
-    .nav-links a:hover, .nav-links a.active { color: #FFFFFF; }
-    .nav-links a::after { background-color: #FFFFFF; }
-
-    .burger { display: block; z-index: 1001; }
+    .nav-links { top: var(--mobile-header-height); height: calc(100vh - var(--mobile-header-height)); padding-top: 30px; }
     .toggle .line1 { transform: rotate(-45deg) translate(-5px, 6px); }
     .toggle .line2 { opacity: 0; }
     .toggle .line3 { transform: rotate(45deg) translate(-5px, -6px); }
 
-    /* Mobile Hero (Using your provided hero styles as base and ensuring fixes) */
     #home.hero-section-split { padding-top: var(--mobile-header-height); display: flex; flex-direction: column; min-height: calc(100vh - var(--mobile-header-height)); box-sizing: border-box; }
     .hero-left-panel, .hero-right-panel { flex-basis: auto; width: 100%; padding-top: 0; }
     .hero-right-panel { order: 1; height: 50vh; background-color: #e0e0e0; flex-shrink: 0; }
